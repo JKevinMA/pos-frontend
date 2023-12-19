@@ -12,6 +12,15 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
+    name: 'Productos'
+  },
+  {
+    name: 'Productos',
+    url: '/productos',
+    iconComponent: { name: 'cil-border-all' },
+  },
+ /*  {
+    title: true,
     name: 'Theme'
   },
   {
@@ -258,5 +267,5 @@ export const navItems: INavData[] = [
     url: 'https://coreui.io/product/angular-dashboard-template/',
     iconComponent: { name: 'cil-layers' },
     attributes: { target: '_blank' }
-  }
+  } */
 ];

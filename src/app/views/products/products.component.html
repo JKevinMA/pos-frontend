@@ -1,0 +1,159 @@
+<div class="mb-3 d-flex justify-content-between">
+    <div>
+        <h5 class="m-0">Lista de productos</h5>
+        <small>Gestiona tus productos</small>
+    </div>
+    <div>
+        <button cButton><svg cIcon name="cilPlus"></svg> Agregar nuevo producto</button>
+    </div>
+</div>
+<c-container fluid>
+    <c-row>
+        <c-card>
+            <c-card-body>
+                <div id="filter" class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <button (click)="this.filterVisible = !this.filterVisible" cButton
+                                [color]="!filterVisible?'primary':'danger'">
+                                <svg cIcon [name]="!filterVisible?'cilFilter':'cilX'"></svg>
+                            </button>
+                            <c-input-group class="ms-2" style="width: 300px;">
+                                <span cInputGroupText id="basic-addon1"><svg cIcon name="cilSearch"></svg></span>
+                                <input aria-describedby="basic-addon1" aria-label="Buscar" cFormControl
+                                    placeholder="Buscar" />
+                            </c-input-group>
+                        </div>
+                        <div>
+                            <button cButton cTooltip="Exportar en excel" cTooltipPlacement="left" color="Default">
+                                <object data="../../../assets/icons-svg/icon-excel.svg" width="20" height="20">
+                                </object>
+                            </button>
+                        </div>
+                    </div>
+                    <div [visible]="filterVisible" cCollapse>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <select aria-label="Selecciona una Categoría" cSelect>
+                                    <option>Selecciona una Categoría</option>
+                                    <option value="1">Esferas</option>
+                                </select>
+                            </div>
+                            <div class="col-3"></div>
+                            <div class="col-3"></div>
+                            <div class="col-3 text-end">
+                                <button cButton>
+                                    <svg cIcon name="cilSearch"></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="table">
+                    <table cTable [responsive]="true" hover>
+                        <thead cTableColor="light">
+                            <tr>
+                                <th width="50px" scope="col">
+                                    <c-form-check>
+                                        <input cFormCheckInput type="checkbox" />
+                                    </c-form-check>
+                                </th>
+                                <th scope="col">SKU</th>
+                                <th scope="col">Nombre del producto</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">Precio de venta</th>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Creado por</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th cAlign="middle" scope="row">
+                                    <c-form-check>
+                                        <input cFormCheckInput type="checkbox" />
+                                    </c-form-check>
+                                </th>
+                                <td cAlign="middle">PES0001</td>
+                                <td cAlign="middle">
+                                    <img width="50px" height="50px" src="../../../assets//img-products/PNV0001.jpeg"
+                                        alt="PNV0001">
+                                    Esfera personalizada
+                                </td>
+                                <td cAlign="middle">Esferas</td>
+                                <td cAlign="middle" align="right">5.00</td>
+                                <td cAlign="middle">Pieza</td>
+                                <td cAlign="middle">Admin</td>
+                                <td cAlign="middle">
+                                    <button cButton color="Default">
+                                        <svg cIcon name="cilPencil"></svg>
+                                    </button>
+                                    <button cButton color="Default">
+                                        <svg cIcon style="color: #e55353;" name="cilTrash"></svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="table-pager" class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <small><label for="select-page-size" style="width: 150px;">Mostrar por
+                                    página:</label></small>
+                            <select id="select-page-size" sizing="sm" aria-label="select-page-size" cSelect>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-content-center">
+                            <c-pagination aria-label="Page navigation">
+                                <li cPageItem>
+                                    <a cPageLink aria-label="Previous" [routerLink]><span aria-hidden="true">&laquo;</span></a>
+                                  </li>
+                                  <li cPageItem>
+                                    <a cPageLink [routerLink]>1</a>
+                                  </li>
+                                  <li cPageItem>
+                                    <a cPageLink [routerLink]>2</a>
+                                  </li>
+                                  <li cPageItem>
+                                    <a cPageLink [routerLink]>3</a>
+                                  </li>
+                                  <li cPageItem>
+                                    <a cPageLink aria-label="Next" [routerLink]><span aria-hidden="true">&raquo;</span></a>
+                                  </li>
+                            </c-pagination>
+                        </div>
+                    </div>
+                </div>
+            </c-card-body>
+        </c-card>
+    </c-row>
+</c-container>
+<!-- <div>
+    <c-card>
+        <c-card-body>
+            <div class="mb-3 d-flex">
+                <button cButton size="sm"><svg cIcon name="cilFilter"></svg></button>
+                <c-input-group class="ms-2" style="width: 300px;">
+                    <span cInputGroupText id="basic-addon1"><svg cIcon name="cilSearch"></svg></span>
+                    <input aria-describedby="basic-addon1" aria-label="Buscar" cFormControl placeholder="Buscar" />
+                </c-input-group>
+            </div>
+            <p class="text-medium-emphasis small">
+                Cards are built with as little markup and styles as possible but still
+                manage to deliver a bunch of control and customization. Built with
+                flexbox, they offer easy alignment and mix well with other CoreUI
+                components. Cards have no top, left, and right margins by default, so
+                use
+                <a href="https://coreui.io/docs/utilities/spacing">spacing utilities</a>
+                as needed. They have no fixed width to start, so they&#39;ll fill the
+                full width of its parent.
+            </p>
+            <p class="text-medium-emphasis small">
+                Below is an example of a basic card with mixed content and a fixed
+                width. Cards have no fixed width to start, so they&#39;ll naturally
+                fill the full width of its parent element.
+            </p>
+        </c-card-body>
+    </c-card>
+</div> -->
