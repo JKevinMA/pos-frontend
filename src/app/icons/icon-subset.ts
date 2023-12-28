@@ -94,7 +94,10 @@ import {
   cilFilter,
   cilSearch,
   cilPlus,
-  cilX
+  cilX,
+  cilCloudUpload,
+  cilTag,
+  cilCart
 } from '@coreui/icons';
 
 export const iconSubset = {
@@ -193,7 +196,10 @@ export const iconSubset = {
   cilFilter,
   cilSearch,
   cilPlus,
-  cilX
+  cilX,
+  cilCloudUpload,
+  cilTag,
+  cilCart
 };
 
 export enum IconSubset {
@@ -292,5 +298,8 @@ export enum IconSubset {
   cilFilter = 'cilFilter',
   cilSearch = 'cilSearch',
   cilPlus = 'cilPlus',
-  cilX = 'cilX'
+  cilX = 'cilX',
+  cilCloudUpload = 'cilCloudUpload',
+  cilTag = 'cilTag',
+  cilCart = 'cilCart'
 }

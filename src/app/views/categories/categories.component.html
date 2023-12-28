@@ -1,10 +1,10 @@
 <div class="mb-3 d-flex justify-content-between">
     <div>
-        <h5 class="m-0">Lista de productos</h5>
-        <small>Gestiona tus productos</small>
+        <h5 class="m-0">Lista de categorías</h5>
+        <small>Gestiona tus categorías</small>
     </div>
     <div>
-        <button [routerLink]="['nuevo']" cButton><svg cIcon name="cilPlus"></svg> Agregar nuevo producto</button>
+        <button [routerLink]="['nuevo']" cButton><svg cIcon name="cilPlus"></svg> Agregar nueva categoría</button>
     </div>
 </div>
 <c-container fluid>
@@ -14,11 +14,11 @@
                 <div id="filter" class="mb-3">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                            <button (click)="this.filterVisible = !this.filterVisible" cButton
+                            <!-- <button (click)="this.filterVisible = !this.filterVisible" cButton
                                 [color]="!filterVisible?'primary':'danger'">
                                 <svg cIcon [name]="!filterVisible?'cilFilter':'cilX'"></svg>
-                            </button>
-                            <c-input-group class="ms-2" style="width: 300px;">
+                            </button> -->
+                            <c-input-group style="width: 300px;">
                                 <span cInputGroupText id="basic-addon1"><svg cIcon name="cilSearch"></svg></span>
                                 <input aria-describedby="basic-addon1" aria-label="Buscar" cFormControl
                                     placeholder="Buscar" />
@@ -31,7 +31,7 @@
                             </button>
                         </div>
                     </div>
-                    <div [visible]="filterVisible" cCollapse>
+                    <!-- <div [visible]="filterVisible" cCollapse>
                         <div class="row mt-3">
                             <div class="col-3">
                                 <select aria-label="Selecciona una Categoría" cSelect>
@@ -47,7 +47,7 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div id="table">
                     <table cTable [responsive]="true" hover>
@@ -58,11 +58,9 @@
                                         <input cFormCheckInput type="checkbox" />
                                     </c-form-check>
                                 </th>
-                                <th scope="col">SKU</th>
-                                <th scope="col">Nombre del producto</th>
-                                <th scope="col">Categoría</th>
-                                <th scope="col">Precio de venta</th>
-                                <th scope="col">Unidad</th>
+                                <th scope="col">Código de categoría</th>
+                                <th scope="col">Nombre de categoría</th>
+                                <th scope="col">Descripción</th>
                                 <th scope="col">Creado por</th>
                                 <th scope="col">Acción</th>
                             </tr>
@@ -74,15 +72,9 @@
                                         <input cFormCheckInput type="checkbox" />
                                     </c-form-check>
                                 </th>
-                                <td cAlign="middle">PES0001</td>
-                                <td cAlign="middle">
-                                    <img width="50px" height="50px" src="../../../assets//img-products/PNV0001.jpeg"
-                                        alt="PNV0001">
-                                    Esfera personalizada
-                                </td>
+                                <td cAlign="middle">C001</td>
                                 <td cAlign="middle">Esferas</td>
-                                <td cAlign="middle" align="right">5.00</td>
-                                <td cAlign="middle">Pieza</td>
+                                <td cAlign="middle">Esferas</td>
                                 <td cAlign="middle">Admin</td>
                                 <td cAlign="middle">
                                     <button cButton color="Default">

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { ProductsRoutingModule } from './products-routing.module';
-import { ProductsComponent } from './products.component';
+import { CategoriesRoutingModule } from './categories-routing.module';
+import { CategoriesComponent } from './categories.component';
 import { ButtonModule, CardModule,CollapseModule,FormModule,GridModule, PaginationModule, TableModule,TooltipModule,UtilitiesModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
-import { NewProductComponent } from './new-product/new-product.component';
+/* import { NewProductComponent } from './new-product/new-product.component'; */
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
-    ProductsRoutingModule,
+    CategoriesRoutingModule,
     CardModule,
     IconModule,
     ButtonModule,
@@ -22,9 +22,9 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   declarations: [
-    ProductsComponent,
-    NewProductComponent
+    CategoriesComponent,
+    /* NewProductComponent */
   ]
 })
-export class ProductsModule {
+export class CategoriesModule {
 }

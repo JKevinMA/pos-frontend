@@ -1,30 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsComponent } from './products.component';
-import { NewProductComponent } from './new-product/new-product.component';
+import { CategoriesComponent } from './categories.component';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Productos'
+      title: 'Categorías'
     },
     children: [
       {
         path: '',
-        component: ProductsComponent,
+        component: CategoriesComponent,
         data: {
           title: ''
         },
     
       },
-      {
+      /* {
         path: 'nuevo',
         component: NewProductComponent,
         data: {
           title: 'Nuevo producto'
         }
-      },
+      }, */
     ],
   }
   
@@ -34,5 +33,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProductsRoutingModule {
+export class CategoriesRoutingModule {
 }

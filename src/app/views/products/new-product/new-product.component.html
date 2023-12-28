@@ -1,0 +1,73 @@
+<div class="mb-3 d-flex justify-content-between">
+    <div>
+        <h5 class="m-0">Agregar producto</h5>
+        <small>Registrar nuevo producto</small>
+    </div>
+</div>
+<c-container fluid>
+    <c-row>
+        <c-card>
+            <c-card-body>
+                <c-row>
+                    <c-col>
+                        <label class="form-group-label" cLabel for="skuProducto">SKU</label>
+                        <input id="skuProducto" cFormControl />
+                    </c-col>
+                    <c-col>
+                        <label class="form-group-label" cLabel for="nombreProducto">Nombre de producto</label>
+                        <input id="nombreProducto" cFormControl />
+                    </c-col>
+                    <c-col>
+                        <label class="form-group-label" cLabel for="categoriaProducto">Categoría</label>
+                        <select id="categoriaProducto" cSelect>
+                            <option>Selecciona una categoría</option>
+                            <option value="1">Esferas</option>
+                        </select>
+                    </c-col>
+                    <c-col>
+                        <label class="form-group-label" cLabel for="unidadProducto">Unidad</label>
+                        <select id="unidadProducto" cSelect>
+                            <option>Selecciona una unidad</option>
+                            <option value="1">Pieza</option>
+                        </select>
+                    </c-col>
+                </c-row>
+                <c-row class="mt-2">
+                    <c-col>
+                        <label class="form-group-label" cLabel for="descripcionProducto">Descripción</label>
+                        <textarea [ngStyle]="{ 'height.px': 100 }" cFormControl id="descripcionProducto"> </textarea>
+                    </c-col>
+                </c-row>
+                <c-row class="mt-2">
+                    <c-col md="3">
+                        <label class="form-group-label" cLabel for="precioVentaProducto">Precio de venta </label>
+                        <input id="precioVentaProducto" cFormControl />
+                    </c-col>
+                </c-row>
+                <c-row class="mt-2">
+                    <c-col>
+                        <label class="form-group-label" cLabel for="imagenProducto">Imagen del producto </label>
+                        <div (click)="fileInput.click()" [class.drop-area-hover]="isDragOver" (dragleave)="onDragLeave($event)"
+                            (dragover)="onDragOver($event)" (drop)="onDrop($event)" class="drop-area">
+                            <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)"
+                                    accept=".png, .jpg, .jpeg" />
+                            <div *ngIf="!imageSrc" class="drop-area-container">
+                                <svg style="color: var(--cui-purple);" height="40px" cIcon name="cilCloudUpload"></svg>
+                                <p>
+                                    Arrastra y suelta un archivo aquí
+                                </p>
+                            </div>
+                            <ng-container *ngIf="imageSrc">
+                                <img width="150px" [src]="imageSrc" alt="Imagen" />
+                            </ng-container>
+                        </div>
+                    </c-col>
+                </c-row>
+                <div class="mt-4">
+                    <button cButton>Guardar</button>
+                    <button cButton class="ms-2" color="secondary">Cancelar</button>
+                </div>
+            </c-card-body>
+        </c-card>
+    </c-row>
+</c-container>
